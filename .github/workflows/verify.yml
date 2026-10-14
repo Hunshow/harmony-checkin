@@ -1,0 +1,40 @@
+name: verify
+
+# 只跑与设备无关的核心算法自检。
+# 完整构建需要 HarmonyOS SDK（需自行配置签名与 SDK License），
+# 因此这里不接入 HAP 构建，保证任何人都能一键跑通验证。
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: 配置 Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: 运行核心算法自检（30 条断言）
+        run: node tools/verify.mjs
+
+      - name: 校验图标资源可重新生成
+        run: |
+          node tools/gen-icons.mjs
+          git diff --exit-code -- AppScope/resources/base/media \
+            || (echo "图标与脚本输出不一致，请本地执行 node tools/gen-icons.mjs 后提交" && exit 1)
+
+      - name: 归档自检报告
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: verify-report
+          path: verify-report.txt
+          if-no-files-found: warn

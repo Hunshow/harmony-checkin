@@ -1,0 +1,16 @@
+{
+  "string": [
+    {
+      "name": "module_desc",
+      "value": "活动签到导入、重复记录检查与参与情况统计"
+    },
+    {
+      "name": "EntryAbility_desc",
+      "value": "活动签到与参与统计主入口"
+    },
+    {
+      "name": "EntryAbility_label",
+      "value": "活动签到统计"
+    }
+  ]
+}

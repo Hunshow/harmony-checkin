@@ -1,0 +1,16 @@
+{
+  "string": [
+    {
+      "name": "module_desc",
+      "value": "Import check-in records, detect duplicates and summarize attendance"
+    },
+    {
+      "name": "EntryAbility_desc",
+      "value": "Activity check-in and attendance statistics"
+    },
+    {
+      "name": "EntryAbility_label",
+      "value": "Checkin Stats"
+    }
+  ]
+}

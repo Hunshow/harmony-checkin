@@ -1,0 +1,5 @@
+# 混淆规则（默认关闭，见 build-profile.json5 的 obfuscation.ruleOptions.enable）
+-enable-property-obfuscation
+-enable-toplevel-obfuscation
+-enable-filename-obfuscation
+-enable-export-obfuscation
