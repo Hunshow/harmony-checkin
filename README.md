@@ -103,6 +103,12 @@ git clone https://github.com/Hunshow/harmony-checkin.git
 cd harmony-checkin
 ```
 
+同一仓库镜像（开放原子 AtomGit，国内访问更快）：
+
+```bash
+git clone https://atomgit.com/gcw_husamPlM/harmony-checkin.git
+```
+
 用 DevEco Studio 打开工程根目录（含 `oh-package.json5` 的那一层），等待 Sync 完成。
 
 ### 2. 生成图标资源（可选）
