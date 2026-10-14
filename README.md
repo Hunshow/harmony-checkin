@@ -1,5 +1,8 @@
 # 活动签到与参与统计 · HarmonyOS 应用
 
+[![verify](https://github.com/Hunshow/harmony-checkin/actions/workflows/verify.yml/badge.svg)](https://github.com/Hunshow/harmony-checkin/actions/workflows/verify.yml)
+[![License: Apache-2.0](https://img.shields.io/badge/License-Apache--2.0-blue.svg)](LICENSE)
+
 一个面向 **鸿蒙 PC（HarmonyOS NEXT / 2in1）** 的开源示例应用：导入签到结果 → 自动检查重复记录 → 统计参与情况 → 导出汇总报表。
 
 全程本地处理，数据不出设备。
@@ -96,7 +99,7 @@
 ### 1. 克隆并打开
 
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/Hunshow/harmony-checkin.git
 cd harmony-checkin
 ```
 
@@ -117,10 +120,11 @@ node tools/gen-icons.mjs
 - 连接鸿蒙 PC / 模拟器，点击 **Run 'entry'**
 - 首次运行建议先点「加载演示数据」，可立即看到完整统计效果
 
-### 4. 换包名（上传自己仓库前必做）
+### 4. 换包名（Fork 后建议修改）
 
 `AppScope/app.json5` 里的 `bundleName` 默认是 `com.example.activitycheckin`，
 改成你自己的域名倒写形式（如 `com.yourname.checkin`），避免与他人冲突。
+改完后在 DevEco Studio 里重新 Sync 一次即可。
 
 ---
 
